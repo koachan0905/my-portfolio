@@ -173,7 +173,9 @@ form .button {
 .hero-button:hover {
     transform: translateY(-5px);
 }
-@media (max-width: 600px) {
+@media (max-width: 600px) {.service-cards {
+    grid-template-columns: 1fr;
+}
 
     .hero h1 {
         font-size: 40px;
@@ -204,6 +206,36 @@ form .button {
         padding: 8px 15px;
     }
 
+}
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    padding: 25px;
+    background: #f7f7f7;
+    border-radius: 15px;
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-icon {
+    font-size: 40px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+}
+
+.service-card p {
+    line-height: 1.7;
 }
 </style>
 </head>
@@ -248,6 +280,42 @@ form .button {
 </p>
 
 <img src="myimage.jpg" alt="プロフィール画像" class="profile-image">
+
+</section>
+<section class="fade-section">
+
+    <h2>できること</h2>
+
+    <div class="service-cards">
+
+        <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>Web制作</h3>
+            <p>
+                HTMLとCSSを使って、
+                Webサイトを作っています。
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🤖</div>
+            <h3>AI活用</h3>
+            <p>
+                AIを使った文章作成や
+                アイデア出しを勉強しています。
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🎬</div>
+            <h3>動画編集</h3>
+            <p>
+                動画編集についても
+                少しずつ勉強しています。
+            </p>
+        </div>
+
+    </div>
 
 </section>
 
