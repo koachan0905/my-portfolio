@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+h2 {
+    border-bottom: 2px solid #222;
+    padding-bottom: 10px;
+}
+
+/* スキル */<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -52,12 +57,7 @@ section {
 }
 
 /* 見出し */
-h2 {
-    border-bottom: 2px solid #222;
-    padding-bottom: 10px;
-}
 
-/* スキル */
 .skills {
     display: flex;
     gap: 15px;
@@ -124,6 +124,87 @@ form .button {
     border: none;
     cursor: pointer;
 }
+.hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(135deg, #111, #333);
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 40px;
+}
+
+.hero-subtitle {
+    letter-spacing: 5px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+.hero-description {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 35px;
+
+    background: white;
+    color: #111;
+
+    text-decoration: none;
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-5px);
+}
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-content {
+        padding: 25px;
+    }
+
+    section {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .skills {
+        gap: 8px;
+    }
+
+    .skill {
+        padding: 8px 15px;
+    }
+
+}
 </style>
 </head>
 
@@ -132,18 +213,31 @@ form .button {
 
 <!-- 最初の画面 -->
 
-<header>
+<header class="hero">
 
-    <h1>Koachan's Portfolio</h1>
+    <div class="hero-content">
 
-    <p>PCスキルを勉強中です</p>
+        <p class="hero-subtitle">WELCOME TO MY WORLD</p>
+
+        <h1>PCで未来を作る。</h1>
+
+        <p class="hero-description">
+            Web制作・AI・プログラミングを勉強中。<br>
+            ここから新しいことに挑戦していきます。
+        </p>
+
+        <a href="#about" class="hero-button">
+            ABOUT ME
+        </a>
+
+    </div>
 
 </header>
 
 
 <!-- 自己紹介 -->
 
-<section class="fade-section">
+<section id="about" class="fade-section">
 
     <h2>自己紹介</h2>
 
