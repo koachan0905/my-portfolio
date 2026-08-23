@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Portfolio</title>
+
+<style>
+
+/* ページ全体 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+/* 最初の画面 */
+header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+
+    animation: fadeIn 1.5s ease;
+}
+
+/* 最初の文字のアニメーション */
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* セクション */
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+}
+
+/* 見出し */
+h2 {
+    border-bottom: 2px solid #222;
+    padding-bottom: 10px;
+}
+
+/* スキル */
+.skills {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background: #222;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* ボタン */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+/* ボタンにマウスを乗せたとき */
+.button:hover {
+    transform: scale(1.1);
+}
+
+/* スクロール前 */
+.fade-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.8s;
+}
+
+/* スクロール後 */
+.fade-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+form .button {
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- 最初の画面 -->
+
+<header>
+
+    <h1>Koachan's Portfolio</h1>
+
+    <p>PCスキルを勉強中です</p>
+
+</header>
+
+
+<!-- 自己紹介 -->
+
+<section class="fade-section">
+
+    <h2>自己紹介</h2>
+
+    <p>
+    PCを使ってお金を稼げるようになるために、
+    Web制作やAIについて勉強しています。
+    まだ初心者ですが、これからいろいろなことに挑戦します。
+</p>
+
+<img src="myimage.jpg" alt="プロフィール画像" class="profile-image">
+
+</section>
+
+
+<!-- 興味があること -->
+
+<section class="fade-section">
+
+    <h2>興味があること</h2>
+
+    <div class="skills">
+
+        <div class="skill">AI</div>
+
+        <div class="skill">Web制作</div>
+
+        <div class="skill">動画編集</div>
+
+        <div class="skill">プログラミング</div>
+
+    </div>
+
+</section>
+
+
+<!-- 目標 -->
+
+<section class="fade-section">
+
+    <h2>目標</h2>
+
+    <p>
+        PCを使って仕事ができるようになり、
+        少しずつ収入を増やしていくこと。
+    </p>
+
+    <button class="button" onclick="showMessage()">
+    よろしくお願いします
+</button>
+
+</section>
+<section class="fade-section">
+
+    <h2>お問い合わせ</h2>
+
+    <form>
+
+        <label>お名前</label>
+        <input type="text" placeholder="お名前を入力">
+
+        <label>メールアドレス</label>
+        <input type="email" placeholder="メールアドレスを入力">
+
+        <label>メッセージ</label>
+        <textarea placeholder="メッセージを入力"></textarea>
+
+        <button type="submit" class="button">
+            送信
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- スクロールアニメーション -->
+
+<script>
+
+function showMessage() {
+    alert("見てくれてありがとうございます！");
+}
+const sections = document.querySelectorAll(".fade-section");
+
+window.addEventListener("scroll", () => {
+
+    sections.forEach(section => {
+
+        const position =
+            section.getBoundingClientRect().top;
+
+        if (position < window.innerHeight - 100) {
+
+            section.classList.add("show");
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
